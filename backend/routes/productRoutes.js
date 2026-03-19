@@ -17,6 +17,16 @@ const router = express.Router();
 // POST /api/products/generate
 router.post("/generate", upload.single("image"), generateProductContent);
 
+// Health/test route to verify routing in production
+// GET /api/products/generate/test
+router.get("/generate/test", (req, res) => {
+  res.json({
+    ok: true,
+    message: "Product generate route is reachable",
+    expected: "POST /api/products/generate"
+  });
+});
+
 // 2. Add New Product with all fields (image, artisan, AI content)
 // POST /api/products
 router.post(

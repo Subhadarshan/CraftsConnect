@@ -23,7 +23,7 @@ export default function Profile() {
               <label className="block text-sm font-medium text-gray-700">Email</label>
               <input type="email" className="w-full px-3 py-2 border rounded-lg" defaultValue="amit@example.com" />
             </div>
-            <button className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">
+            <button className="w-full bg-teal-600 text-white py-2 rounded-lg hover:bg-teal-700">
               Save Changes
             </button>
           </form>

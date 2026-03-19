@@ -3,6 +3,7 @@ import { useToast } from "../ui/ToastProvider.jsx";
 import { API_BASE_URL } from "../config";
 
 export default function PublicProducts() {
+
   const { show } = useToast();
   const [shareOpenId, setShareOpenId] = useState(null);
   const [products, setProducts] = useState([]);
@@ -65,6 +66,13 @@ export default function PublicProducts() {
 
   const sortedProducts = products;
 
+  function getImageUrl(img) {
+    if (!img) return '';
+    if (/^https?:\/\//i.test(img)) return img; // already absolute
+    const path = img.startsWith('/') ? img : `/${img}`;
+    return `${API_BASE_URL}${path}`;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Hero Section */}
@@ -113,7 +121,7 @@ export default function PublicProducts() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-indigo-600 text-white shadow-lg'
+                      ? 'bg-teal-600 text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -151,7 +159,7 @@ export default function PublicProducts() {
               <p className="text-gray-600">{error}</p>
               <button
                 onClick={fetchProducts}
-                className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+                className="mt-4 px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700"
               >
                 Try Again
               </button>
@@ -166,7 +174,7 @@ export default function PublicProducts() {
                   setSearchTerm("");
                   setSelectedCategory("all");
                 }}
-                className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+                className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700"
               >
                 Clear Filters
               </button>
@@ -189,7 +197,7 @@ export default function PublicProducts() {
                     <div className="relative h-64 overflow-hidden">
                       {product.image ? (
                         <img
-                          src={product.image}
+                          src={getImageUrl(product.image)}
                           alt={product.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
@@ -262,11 +270,11 @@ export default function PublicProducts() {
                               window.dispatchEvent(evt);
                             } catch {}
                           }}
-                          className="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-sm font-medium"
+                          className="flex-1 px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors duration-200 text-sm font-medium"
                         >
                           View Details
                         </button>
-                        <a href="/checkout" className="px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors duration-200 text-sm font-medium">
+                        <a href="/checkout" className="px-4 py-2 border border-indigo-600 text-teal-600 rounded-lg hover:bg-teal-50 transition-colors duration-200 text-sm font-medium">
                           ♥
                         </a>
                         <button
@@ -378,14 +386,14 @@ export default function PublicProducts() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Are You an Artisan?
           </h2>
-          <p className="text-xl text-indigo-100 mb-8">
+          <p className="text-xl text-teal-100 mb-8">
             Join our community and showcase your handcrafted products to customers worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/signup" className="px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <a href="/signup" className="px-8 py-4 bg-white text-teal-600 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
               Start Selling Today
             </a>
-            <a href="/features" className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition-all duration-300">
+            <a href="/features" className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-teal-600 transition-all duration-300">
               Learn More
             </a>
           </div>

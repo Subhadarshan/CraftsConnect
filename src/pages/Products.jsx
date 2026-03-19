@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { API_BASE_URL } from "../config";
 
 export default function Products() {
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -27,6 +28,15 @@ export default function Products() {
   useEffect(() => {
     fetchProducts();
   }, []);
+
+  function getImageUrl(img) {
+    if (!img) return '';
+    // If already absolute, return as-is
+    if (/^https?:\/\//i.test(img)) return img;
+    // Ensure leading slash
+    const path = img.startsWith('/') ? img : `/${img}`;
+    return `${API_BASE_URL}${path}`;
+  }
 
   async function deleteProduct(id) {
     if (!confirm("Delete this product?")) return;
@@ -81,8 +91,8 @@ export default function Products() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-indigo-500">
             <div className="flex items-center">
-              <div className="p-2 bg-indigo-100 rounded-lg">
-                <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="p-2 bg-teal-100 rounded-lg">
+                <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
               </div>
@@ -121,10 +131,10 @@ export default function Products() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-500">
+          <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-emerald-500">
             <div className="flex items-center">
-              <div className="p-2 bg-purple-100 rounded-lg">
-                <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="p-2 bg-emerald-100 rounded-lg">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
@@ -177,7 +187,7 @@ export default function Products() {
                 <div className="relative h-48 overflow-hidden">
                   {product.image ? (
                     <img
-                      src={product.image}
+                      src={getImageUrl(product.image)}
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -235,7 +245,7 @@ export default function Products() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-2 pt-4 border-t border-gray-100">
-                    <button className="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-sm font-medium">
+                    <button className="flex-1 px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors duration-200 text-sm font-medium">
                       Edit
                     </button>
                     <button className="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm font-medium">

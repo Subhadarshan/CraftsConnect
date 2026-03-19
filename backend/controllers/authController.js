@@ -30,7 +30,13 @@ export const signup = async (req, res) => {
       password: hashedPassword,
     });
 
-    res.status(201).json({ message: "User created successfully", user: newUser });
+    // issue JWT so frontend can stay logged in after signup
+    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    const safeUser = { name: newUser.name, email: newUser.email, _id: newUser._id };
+    res.status(201).json({ message: "User created successfully", token, user: safeUser });
   } catch (err) {
     console.error("❌ Signup error:", err);
     res.status(500).json({ message: "Server error" });

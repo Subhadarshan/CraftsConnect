@@ -86,7 +86,7 @@ const Profile = () => {
         <h2 className="text-2xl font-bold">Profile</h2>
         <button
           onClick={() => setEditing(!editing)}
-          className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+          className="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700"
         >
           {editing ? "Cancel" : "Edit Profile"}
         </button>

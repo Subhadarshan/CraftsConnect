@@ -92,7 +92,7 @@ export default function Features() {
               <a href="/signup" className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
                 Start Free Trial
               </a>
-              <a href="/contact" className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-purple-900 transition-all duration-300">
+              <a href="/contact" className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-emerald-900 transition-all duration-300">
                 Contact Sales
               </a>
             </div>
@@ -106,7 +106,7 @@ export default function Features() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold text-teal-600 mb-2">{stat.number}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -207,14 +207,14 @@ export default function Features() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Transform Your Craft Business?
           </h2>
-          <p className="text-xl text-indigo-100 mb-8">
+          <p className="text-xl text-teal-100 mb-8">
             Join thousands of artisans who are already growing their businesses with CraftConnect.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/signup" className="px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <a href="/signup" className="px-8 py-4 bg-white text-teal-600 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
               Get Started Free
             </a>
-            <a href="/contact" className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition-all duration-300">
+            <a href="/contact" className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-teal-600 transition-all duration-300">
               Schedule Demo
             </a>
           </div>

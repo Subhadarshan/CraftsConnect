@@ -213,7 +213,7 @@ export default function ChatbotWidget() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 flex items-center justify-center space-x-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
                     activeTab === tab.id
-                      ? 'bg-white text-indigo-600'
+                      ? 'bg-white text-teal-600'
                       : 'text-white hover:bg-white hover:bg-opacity-20'
                   }`}
                 >
@@ -239,12 +239,12 @@ export default function ChatbotWidget() {
                         className={`max-w-[85%] p-3 rounded-lg ${
                           m.role === "bot"
                             ? "bg-white border border-gray-200 text-gray-800"
-                            : "bg-indigo-600 text-white"
+                            : "bg-teal-600 text-white"
                         }`}
                       >
                         <div className="whitespace-pre-wrap text-sm">{m.text}</div>
                         <div className={`text-xs mt-1 ${
-                          m.role === "bot" ? "text-gray-500" : "text-indigo-200"
+                          m.role === "bot" ? "text-gray-500" : "text-teal-200"
                         }`}>
                           {m.timestamp?.toLocaleTimeString()}
                         </div>
@@ -273,7 +273,7 @@ export default function ChatbotWidget() {
                       { action: "recommend", label: "Find Products", icon: Search, color: "bg-blue-500" },
                       { action: "cultural", label: "Learn Culture", icon: BookOpen, color: "bg-green-500" },
                       { action: "order", label: "Order Help", icon: ShoppingCart, color: "bg-orange-500" },
-                      { action: "consultation", label: "Consultation", icon: Calendar, color: "bg-purple-500" }
+                      { action: "consultation", label: "Consultation", icon: Calendar, color: "bg-emerald-500" }
                     ].map((btn) => (
                       <button
                         key={btn.action}
@@ -310,7 +310,7 @@ export default function ChatbotWidget() {
                         }
                       }}
                       disabled={sending || !input.trim()}
-                      className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-60 transition-colors"
+                      className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 disabled:opacity-60 transition-colors"
                     >
                       {sending ? "..." : "Send"}
                     </button>
@@ -348,7 +348,7 @@ export default function ChatbotWidget() {
                             <div className="text-sm text-gray-500">{item.count}</div>
                           </div>
                         </div>
-                        <button className="text-indigo-600 hover:text-indigo-800">
+                        <button className="text-teal-600 hover:text-teal-800">
                           <Search size={16} />
                         </button>
                       </div>
@@ -370,7 +370,7 @@ export default function ChatbotWidget() {
                   ].map((craft, idx) => (
                     <div key={idx} className="bg-white p-3 rounded-lg border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
                       <div className="font-medium text-gray-800">{craft.title}</div>
-                      <div className="text-sm text-indigo-600">{craft.region}</div>
+                      <div className="text-sm text-teal-600">{craft.region}</div>
                       <div className="text-sm text-gray-600 mt-1">{craft.description}</div>
                     </div>
                   ))}

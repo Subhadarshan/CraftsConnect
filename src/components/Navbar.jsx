@@ -92,13 +92,13 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t border-gray-100 shadow-sm px-6 py-4 space-y-4">
           {!isAuthenticated && (
             <>
-              <Link to="/" className="block text-gray-700 hover:text-indigo-600">Home</Link>
-              <Link to="/features" className="block text-gray-700 hover:text-indigo-600">Features</Link>
+              <Link to="/" className="block text-gray-700 hover:text-teal-600">Home</Link>
+              <Link to="/features" className="block text-gray-700 hover:text-teal-600">Features</Link>
             </>
           )}
-          <Link to="/products" className="block text-gray-700 hover:text-indigo-600">Products</Link>
-          <Link to="/dashboard" className="block text-gray-700 hover:text-indigo-600">Dashboard</Link>
-          <Link to="/contact" className="block text-gray-700 hover:text-indigo-600">Contact</Link>
+          <Link to="/products" className="block text-gray-700 hover:text-teal-600">Products</Link>
+          <Link to="/dashboard" className="block text-gray-700 hover:text-teal-600">Dashboard</Link>
+          <Link to="/contact" className="block text-gray-700 hover:text-teal-600">Contact</Link>
 
           <div className="flex space-x-4 pt-4">
             {isAuthenticated ? (

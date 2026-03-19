@@ -45,7 +45,7 @@ export default function Checkout() {
               </div>
               <button
                 onClick={() => { alert("Prototype checkout submitted! (No payment processed)"); clearCart(); }}
-                className="w-full px-4 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+                className="w-full px-4 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700"
               >
                 Place Order
               </button>

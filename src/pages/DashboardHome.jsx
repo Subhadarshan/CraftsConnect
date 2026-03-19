@@ -154,7 +154,7 @@ export default function DashboardHome() {
     <div className="p-6 space-y-8 bg-gray-50 min-h-screen">
       {/* Header */}
       <div className="bg-white rounded-xl shadow-md p-6">
-        <h1 className="text-3xl font-bold text-indigo-600 mb-2">CraftConnect</h1>
+        <h1 className="text-3xl font-bold text-teal-600 mb-2">CraftConnect</h1>
         <p className="text-gray-600">Artisan Stories Marketplace</p>
       </div>
 
@@ -163,9 +163,9 @@ export default function DashboardHome() {
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Artisan Dashboard</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((item, i) => (
-            <div key={i} className="bg-indigo-50 shadow-md rounded-xl p-6 border border-indigo-100 hover:shadow-lg transition">
+            <div key={i} className="bg-teal-50 shadow-md rounded-xl p-6 border border-indigo-100 hover:shadow-lg transition">
               <h2 className="text-gray-600 text-sm font-medium">{item.title}</h2>
-              <p className="text-2xl font-bold mt-2 text-indigo-700">{item.value}</p>
+              <p className="text-2xl font-bold mt-2 text-teal-700">{item.value}</p>
             </div>
           ))}
         </div>
@@ -208,7 +208,7 @@ export default function DashboardHome() {
                 Upload Product Photo (Optional)
               </label>
               <div className="flex items-center space-x-3">
-                <label className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg cursor-pointer hover:bg-indigo-200 transition-colors">
+                <label className="px-4 py-2 bg-teal-100 text-teal-700 rounded-lg cursor-pointer hover:bg-teal-200 transition-colors">
                   <svg className="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                   </svg>
@@ -296,7 +296,7 @@ export default function DashboardHome() {
               <button
               type="submit"
               disabled={loading || (!productName && !productImageFile)}
-              className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 transition-colors flex items-center justify-center"
+              className="w-full px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50 transition-colors flex items-center justify-center"
               >
               {loading ? (
                 <>
@@ -365,14 +365,14 @@ export default function DashboardHome() {
                   <p className="text-green-700 mt-2">{aiResult.description}</p>
                 </div>
                 
-                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                  <h4 className="font-semibold text-purple-800 flex items-center">
+                <div className="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
+                  <h4 className="font-semibold text-emerald-800 flex items-center">
                     <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                     </svg>
                     Craft Story
                   </h4>
-                  <p className="text-purple-700 mt-2">{aiResult.story}</p>
+                  <p className="text-emerald-700 mt-2">{aiResult.story}</p>
                 </div>
                 
                 <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
