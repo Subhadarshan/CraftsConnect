@@ -5,9 +5,9 @@
 <h1 align="center">🎨 CraftConnect - AI-Powered Artisan Marketplace</h1>
 
 <p align="center">
-  <a href="https://github.com/sandeepbehera21/CraftConnect"><img src="https://img.shields.io/github/repo-size/sandeepbehera21/CraftConnect?color=blue" alt="Repo Size"></a>
-  <a href="https://github.com/sandeepbehera21/CraftConnect/issues"><img src="https://img.shields.io/github/issues/sandeepbehera21/CraftConnect" alt="Issues"></a>
-  <a href="https://github.com/sandeepbehera21/CraftConnect/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
+  <a href="https://github.com/Subhadarshan/CraftsConnect"><img src="https://img.shields.io/github/repo-size/Subhadarshan/CraftsConnect?color=blue" alt="Repo Size"></a>
+  <a href="https://github.com/Subhadarshan/CraftsConnect/issues"><img src="https://img.shields.io/github/issues/Subhadarshan/CraftsConnect" alt="Issues"></a>
+  <a href="https://github.com/Subhadarshan/CraftsConnect/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
   <a href="https://craftconnect-hackathon-2025.uc.r.appspot.com"><img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-blueviolet" alt="Live Demo"></a>
 </p>
 
@@ -57,8 +57,6 @@ Artisan Onboarding: Register → Upload Product → AI Content Generation → Pu
 Customer Journey: Discover → Browse → Learn Story → Purchase → Share
 AI Content Generation: Image Upload → Gemini Analysis → Story Creation → Optimization
 🏗️ Architecture Diagram
-scss
-Copy code
 Frontend (React + Tailwind + Context API)
        │
        ▼
@@ -70,102 +68,3 @@ Database (MongoDB Atlas)
        ▼
 AI (Google Gemini API)
 Benefits: Microservices, scalable, secure, auto-scaling, high availability.
-
-💰 Cost & ROI (INR)
-One-time Dev: ₹17.6L – ₹29.6L
-Monthly Operations: ₹8.4k – ₹37.6k
-Scaling (1000+ users): ₹32k – ₹96k
-
-ROI:
-
-Break-even: 6–12 months
-
-Revenue per artisan: ₹4k – ₹16k/month
-
-Commission: 5–10%
-
-Projected annual revenue: ₹40L – ₹1.6Cr
-
-🏆 Hackathon Compliance & Highlights
-Compliance: ☁️ Cloud Integration | 🤖 AI (Gemini) | 🌐 Full-Stack | 💡 Innovation | 👩‍🎨 Social Impact | ⚡ Scalability
-
-Social Impact: Artisan empowerment | Cultural preservation | Economic development | Global reach
-
-Innovation: AI Story Generator | Smart Analytics | UTM Sharing | Mobile-first
-
-Technical: Microservices | Real-time AI | Security best practices | Performance optimization
-
-Future: Payment integration | Mobile app | Multi-language | Advanced analytics
-
-## 🚀 Quick Start & Deployment
-
-### Local Development
-```bash
-# Clone repository
-git clone https://github.com/sandeepbehera21/CraftConnect.git
-cd CraftConnect
-
-# Setup Backend
-cd backend
-cp .env.example .env
-# Edit .env with your credentials
-npm install
-npm run dev
-
-# Setup Frontend (new terminal)
-cd ..
-npm install
-npm run dev
-```
-
-### Production Deployment (Google Cloud)
-
-**IMPORTANT: Story Generation Fix Applied!**
-
-The story generation feature now works properly in production. Here's what was fixed:
-
-1. **Environment Variables**: Added proper `app.yaml` configuration
-2. **Health Check**: Added `/api/health` endpoint
-3. **Error Handling**: Improved AI service error messages
-
-```bash
-# Deploy Backend
-cd backend
-# Update app.yaml with your environment variables
-gcloud app deploy app.yaml
-
-# Deploy Frontend
-cd ..
-npm run build
-gcloud app deploy frontend-app.yaml
-```
-
-### Required Environment Variables
-
-**Backend (.env)**:
-- `GEMINI_API_KEY`: Get from [Google AI Studio](https://makersuite.google.com/app/apikey)
-- `MONGO_URI`: MongoDB connection string
-- `JWT_SECRET`: Secure random string
-- `FRONTEND_ORIGIN`: Your frontend URL
-
-**Frontend (.env)** (optional):
-- `VITE_API_BASE_URL`: Backend URL (defaults handled in config.js)
-
-### Testing Story Generation
-
-After deployment:
-1. Visit your deployed app
-2. Register/Login as artisan
-3. Go to Dashboard
-4. Enter product name → Click "Generate Story"
-5. Verify AI content appears
-
-### Health Check
-Visit: `https://your-backend-url/api/health` to verify Gemini API is configured.
-
----
-
-## 📜 License
-MIT License
-
-<p align="center"> Made with ❤️ by Sandeep Behera for Hackathon 2025 
